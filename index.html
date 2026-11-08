@@ -30,51 +30,74 @@
             margin: auto 0;
         }
         .logo-box {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, #38bdf8, #0284c7);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: #ffffff;
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
-            margin-bottom: 15px;
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+            margin-bottom: 12px;
         }
         h1 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: #ffffff;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             text-align: center;
         }
-        .subtitle {
-            font-size: 0.9rem;
-            color: #94a3b8;
+        .intro-box {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 20px;
+            width: 100%;
             text-align: center;
-            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .intro-box h2 {
+            font-size: 1.05rem;
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+        .intro-box p {
+            font-size: 0.85rem;
+            color: #94a3b8;
             line-height: 1.4;
+            margin-bottom: 10px;
+        }
+        .intro-box ul {
+            text-align: left;
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        .intro-box li {
+            margin-bottom: 4px;
         }
         .links-group {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
         .link-card {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 18px;
+            padding: 12px 16px;
             background: #1e293b;
             border: 1px solid #334155;
-            border-radius: 14px;
+            border-radius: 12px;
             text-decoration: none;
             color: #f8fafc;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         .link-card:active {
             transform: scale(0.98);
@@ -83,17 +106,17 @@
         .link-content {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
         }
         .icon {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
         .text-group {
             display: flex;
             flex-direction: column;
         }
         .title {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: #f1f5f9;
         }
@@ -103,7 +126,7 @@
         }
         .arrow {
             color: #38bdf8;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: bold;
         }
         .main-btn {
@@ -120,7 +143,7 @@
             color: #ffffff;
         }
         footer {
-            margin-top: 25px;
+            margin-top: 20px;
             font-size: 0.8rem;
             color: #64748b;
             text-align: center;
@@ -133,11 +156,20 @@
         <!-- Логотип -->
         <div class="logo-box">360°</div>
 
-        <!-- Заголовок -->
-        INFO 360°
-        <p class="subtitle">Є що показати чи оголосити? Надсилайте новини та матеріали!</p>
+        <h1>INFO 360°</h1>
 
-        <!-- Ссылки на рубрики -->
+        <!-- Блок описания из твоего первого поста / картинки -->
+        <div class="intro-box">
+            <h2>Є що показати чи оголосити? 📢</h2>
+            <p>Надсилайте свої фото, відео, новини та оголошення з нашого району[span_3](start_span)[span_3](end_span)!</p>
+            <ul>
+                <li>Матеріал має бути вашим[span_4](start_span)[span_4](end_span).</li>
+                <li>Бажано вказати, де та коли це сталося[span_5](start_span)[span_5](end_span).</li>
+                <li>Найцікавіше опиниться на каналі[span_6](start_span)[span_6](end_span)!</li>
+            </ul>
+        </div>
+
+        <!-- Кнопки-рубрики -->
         <div class="links-group">
             
             <!-- Робота та техніка -->
@@ -146,19 +178,19 @@
                     <span class="icon">🚜</span>
                     <div class="text-group">
                         <span class="title">Робота та техніка</span>
-                        <span class="desc">Вакансії, спецтехніка та робочі питання</span>
+                        <span class="desc">Вакансії та спецтехніка</span>
                     </div>
                 </div>
                 <span class="arrow">→</span>
             </a>
 
-            <!-- Місцеві та сільські новини -->
+            <!-- Місцеві новини -->
             <a href="https://t.me/info360_krem" class="link-card main-btn" target="_blank">
                 <div class="link-content">
                     <span class="icon">📍</span>
                     <div class="text-group">
-                        <span class="title">Сільські та місцеві новини</span>
-                        <span class="desc">Кременчуцький район у реальному часі</span>
+                        <span class="title">Місцеві новини району</span>
+                        <span class="desc">Сільські новини та події</span>
                     </div>
                 </div>
                 <span class="arrow">→</span>
@@ -176,13 +208,13 @@
                 <span class="arrow">→</span>
             </a>
 
-            <!-- Курйози та цікаві випадки -->
+            <!-- Курйози -->
             <a href="https://t.me/info360_chat" class="link-card" target="_blank">
                 <div class="link-content">
                     <span class="icon">😂</span>
                     <div class="text-group">
                         <span class="title">Курйози та цікаві випадки</span>
-                        <span class="desc">Життєві моменти та гумор району</span>
+                        <span class="desc">Життєві моменти району</span>
                     </div>
                 </div>
                 <span class="arrow">→</span>
