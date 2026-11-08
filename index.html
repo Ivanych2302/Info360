@@ -38,39 +38,24 @@
         }
         main {
             width: 100%;
-            max-width: 650px;
+            max-width: 700px;
             padding: 15px;
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
         }
-        .feed-box {
+        .feed-container {
             width: 100%;
-            background: #1e293b;
-            border: 1px solid #334155;
+            height: 75vh;
             border-radius: 12px;
             overflow: hidden;
+            background: #1e293b;
+            border: 1px solid #334155;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-            padding: 15px;
-            text-align: center;
         }
-        .tg-widget-container {
+        iframe {
             width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #229ed9;
-            color: white;
-            text-decoration: none;
-            padding: 10px 24px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-top: 15px;
-            box-shadow: 0 4px 10px rgba(34, 158, 217, 0.3);
+            height: 100%;
+            border: none;
+            background: #ffffff;
         }
         footer {
             width: 100%;
@@ -90,15 +75,9 @@
     </header>
 
     <main>
-        <div class="feed-box">
-            <p style="color: #94a3b8; margin-bottom: 15px; font-size: 0.9rem;">Останні публікації з нашого каналу:</p>
-            
-            <!-- Офіційний віджет Telegram -->
-            <div class="tg-widget-container">
-                <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="info360_krem/1" data-width="100%" data-dark="1"></script>
-            </div>
-
-            <a href="https://t.me/info360_krem" class="btn" target="_blank">Відкрити канал у Telegram</a>
+        <div class="feed-container">
+            <!-- Автоматична стрічка каналу -->
+            <iframe src="https://t.me/s/info360_krem"></iframe>
         </div>
     </main>
 
