@@ -38,24 +38,46 @@
         }
         main {
             width: 100%;
-            max-width: 700px;
-            padding: 15px;
+            max-width: 650px;
+            padding: 20px 15px;
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
-        .feed-container {
-            width: 100%;
-            height: 75vh;
-            border-radius: 12px;
-            overflow: hidden;
+        .post-card {
             background: #1e293b;
             border: 1px solid #334155;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            background: #ffffff;
+        .post-date {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 8px;
+        }
+        .post-content {
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            word-break: break-word;
+        }
+        .post-link {
+            display: inline-block;
+            background-color: #229ed9;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .loading, .error {
+            text-align: center;
+            color: #94a3b8;
+            padding: 30px;
         }
         footer {
             width: 100%;
@@ -74,16 +96,65 @@
         <p class="subtitle">Головний інформаційний портал | Кременчуцький район</p>
     </header>
 
-    <main>
-        <div class="feed-container">
-            <!-- Автоматична стрічка каналу -->
-            <iframe src="https://t.me/s/info360_krem"></iframe>
-        </div>
+    <main id="feed">
+        <div class="loading">Завантаження новин з Telegram...</div>
     </main>
 
     <footer>
         <p>&copy; 2026 Info 360 | Кременчуцький район</p>
     </footer>
+
+    <script>
+        async function loadTelegramFeed() {
+            const feedContainer = document.getElementById('feed');
+            // Используем публичный RSS-мост для Telegram-каналов
+            const rssUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Ft.me%2Fs%2Finfo360_krem';
+
+            try {
+                const response = await fetch(rssUrl);
+                const data = await response.json();
+
+                if (data.status === 'ok' && data.items.length > 0) {
+                    feedContainer.innerHTML = ''; // Очищаем загрузку
+                    
+                    // Выводим последние 10 постов
+                    data.items.forEach(item => {
+                        const date = new Date(item.pubDate).toLocaleString('uk-UA', {
+                            day: 'numeric',
+                            month: 'long',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        });
+
+                        // Обрезаем длинный текст для превью, очищаем от лишних тегов
+                        let cleanText = item.description.replace(/<[^>]*>?/gm, '');
+                        if (cleanText.length > 250) {
+                            cleanText = cleanText.substring(0, 250) + '...';
+                        }
+
+                        const card = document.createElement('div');
+                        card.className = 'post-card';
+                        card.innerHTML = `
+                            <div class="post-date">${date}</div>
+                            <div class="post-content">${cleanText}</div>
+                            <a href="${item.link}" class="link" target="_blank" class="post-link">Читати в Telegram →</a>
+                        `;
+                        feedContainer.appendChild(card);
+                    });
+                } else {
+                    feedContainer.innerHTML = '<div class="error">Пости поки не знайдені. Зазирніть пізніше.</div>';
+                }
+            } catch (error) {
+                feedContainer.innerHTML = `
+                    <div class="post-card" style="text-align: center;">
+                        <p style="margin-bottom: 15px; color: #e2e8f0;">Всі оперативні новини в нашому каналі:</p>
+                        <a href="https://t.me/info360_krem" target="_blank" style="display:inline-block; background:#229ed9; color:white; padding:10px 20px; border-radius:20px; text-decoration:none; font-weight:600;">Відкрити Telegram</a>
+                    </div>`;
+            }
+        }
+
+        loadTelegramFeed();
+    </script>
 
 </body>
 </html>
