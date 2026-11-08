@@ -45,39 +45,66 @@
             flex-direction: column;
             gap: 15px;
         }
-        .post-card {
+        .hero-card {
             background: #1e293b;
             border: 1px solid #334155;
             border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
         }
-        .post-date {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            margin-bottom: 8px;
-        }
-        .post-content {
-            font-size: 0.95rem;
+        .hero-card h2 {
+            font-size: 1.25rem;
             color: #e2e8f0;
-            line-height: 1.5;
-            margin-bottom: 15px;
-            word-break: break-word;
+            margin-bottom: 10px;
         }
-        .post-link {
+        .hero-card p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .btn {
             display: inline-block;
             background-color: #229ed9;
             color: white;
             text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 12px 28px;
+            border-radius: 25px;
             font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(34, 158, 217, 0.3);
+            transition: background 0.2s;
         }
-        .loading, .error {
-            text-align: center;
-            color: #94a3b8;
-            padding: 30px;
+        .btn:active {
+            background-color: #1b82b4;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .feature-item {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .feature-text {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+        .feature-link {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            margin-left: 10px;
         }
         footer {
             width: 100%;
@@ -96,65 +123,32 @@
         <p class="subtitle">Головний інформаційний портал | Кременчуцький район</p>
     </header>
 
-    <main id="feed">
-        <div class="loading">Завантаження новин з Telegram...</div>
+    <main>
+        <div class="hero-card">
+            <h2>Оперативні новини Кременчуцького району</h2>
+            <p>Вся актуальна інформація, події, фото та відео публікуються в реальному часі в нашому офіційному Telegram-каналі.</p>
+            <a href="https://t.me/info360_krem" class="btn" target="_blank">Перейти до Telegram-каналу</a>
+        </div>
+
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-text">⚡ Свіжі новини та події регіону</span>
+                <a href="https://t.me/info360_krem" class="feature-link" target="_blank">Читати →</a>
+            </div>
+            <div class="feature-item">
+                <span class="feature-text">📷 Фото та відео з місць подій</span>
+                <a href="https://t.me/info360_krem" class="feature-link" target="_blank">Дивитися →</a>
+            </div>
+            <div class="feature-item">
+                <span class="feature-text">💬 Обговорення та коментарі</span>
+                <a href="https://t.me/info360_krem" class="feature-link" target="_blank">Долучитись →</a>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Info 360 | Кременчуцький район</p>
     </footer>
-
-    <script>
-        async function loadTelegramFeed() {
-            const feedContainer = document.getElementById('feed');
-            // Используем публичный RSS-мост для Telegram-каналов
-            const rssUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Ft.me%2Fs%2Finfo360_krem';
-
-            try {
-                const response = await fetch(rssUrl);
-                const data = await response.json();
-
-                if (data.status === 'ok' && data.items.length > 0) {
-                    feedContainer.innerHTML = ''; // Очищаем загрузку
-                    
-                    // Выводим последние 10 постов
-                    data.items.forEach(item => {
-                        const date = new Date(item.pubDate).toLocaleString('uk-UA', {
-                            day: 'numeric',
-                            month: 'long',
-                            hour: '2-digit',
-                            minute: '2-digit'
-                        });
-
-                        // Обрезаем длинный текст для превью, очищаем от лишних тегов
-                        let cleanText = item.description.replace(/<[^>]*>?/gm, '');
-                        if (cleanText.length > 250) {
-                            cleanText = cleanText.substring(0, 250) + '...';
-                        }
-
-                        const card = document.createElement('div');
-                        card.className = 'post-card';
-                        card.innerHTML = `
-                            <div class="post-date">${date}</div>
-                            <div class="post-content">${cleanText}</div>
-                            <a href="${item.link}" class="link" target="_blank" class="post-link">Читати в Telegram →</a>
-                        `;
-                        feedContainer.appendChild(card);
-                    });
-                } else {
-                    feedContainer.innerHTML = '<div class="error">Пости поки не знайдені. Зазирніть пізніше.</div>';
-                }
-            } catch (error) {
-                feedContainer.innerHTML = `
-                    <div class="post-card" style="text-align: center;">
-                        <p style="margin-bottom: 15px; color: #e2e8f0;">Всі оперативні новини в нашому каналі:</p>
-                        <a href="https://t.me/info360_krem" target="_blank" style="display:inline-block; background:#229ed9; color:white; padding:10px 20px; border-radius:20px; text-decoration:none; font-weight:600;">Відкрити Telegram</a>
-                    </div>`;
-            }
-        }
-
-        loadTelegramFeed();
-    </script>
 
 </body>
 </html>
