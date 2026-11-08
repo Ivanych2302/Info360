@@ -30,78 +30,88 @@
             margin: auto 0;
         }
         .logo-box {
-            width: 70px;
-            height: 70px;
+            width: 75px;
+            height: 75px;
             background: linear-gradient(135deg, #38bdf8, #0284c7);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             font-weight: 800;
             color: #ffffff;
             box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
         h1 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: #ffffff;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
             text-align: center;
         }
         .intro-box {
             background: #1e293b;
             border: 1px solid #334155;
-            border-radius: 14px;
-            padding: 16px;
+            border-radius: 16px;
+            padding: 20px;
             margin-bottom: 20px;
             width: 100%;
             text-align: center;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         .intro-box h2 {
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             color: #38bdf8;
-            margin-bottom: 8px;
-        }
-        .intro-box p {
-            font-size: 0.85rem;
-            color: #94a3b8;
-            line-height: 1.4;
             margin-bottom: 10px;
         }
-        .intro-box ul {
+        .intro-box p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .rules-list {
             text-align: left;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #cbd5e1;
-            padding-left: 20px;
-            margin-top: 8px;
+            background: #0f172a;
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin-top: 10px;
+            list-style: none;
         }
-        .intro-box li {
-            margin-bottom: 4px;
+        .rules-list li {
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 18px;
         }
-        .links-group {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .rules-list li::before {
+            content: "•";
+            color: #38bdf8;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .rules-list li:last-child {
+            margin-bottom: 0;
         }
         .link-card {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 12px 16px;
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, #0284c7, #2563eb);
+            border-radius: 14px;
             text-decoration: none;
-            color: #f8fafc;
-            transition: all 0.2s ease;
+            color: #ffffff;
+            width: 100%;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            transition: transform 0.2s ease;
         }
         .link-card:active {
             transform: scale(0.98);
-            background: #334155;
         }
         .link-content {
             display: flex;
@@ -109,38 +119,13 @@
             gap: 12px;
         }
         .icon {
-            font-size: 1.3rem;
-        }
-        .text-group {
-            display: flex;
-            flex-direction: column;
+            font-size: 1.4rem;
         }
         .title {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #f1f5f9;
-        }
-        .desc {
-            font-size: 0.75rem;
-            color: #94a3b8;
+            font-size: 1rem;
         }
         .arrow {
-            color: #38bdf8;
-            font-size: 1rem;
-            font-weight: bold;
-        }
-        .main-btn {
-            background: linear-gradient(135deg, #0284c7, #2563eb);
-            border: none;
-        }
-        .main-btn .title {
-            color: #ffffff;
-        }
-        .main-btn .desc {
-            color: #e0f2fe;
-        }
-        .main-btn .arrow {
-            color: #ffffff;
+            font-size: 1.2rem;
         }
         footer {
             margin-top: 20px;
@@ -158,69 +143,26 @@
 
         <h1>INFO 360°</h1>
 
-        <!-- Блок описания из твоего первого поста / картинки -->
+        <!-- Блок описания (твой первый пост / картинка) -->
         <div class="intro-box">
             <h2>Є що показати чи оголосити? 📢</h2>
-            <p>Надсилайте свої фото, відео, новини та оголошення з нашого району[span_3](start_span)[span_3](end_span)!</p>
-            <ul>
-                <li>Матеріал має бути вашим[span_4](start_span)[span_4](end_span).</li>
-                <li>Бажано вказати, де та коли це сталося[span_5](start_span)[span_5](end_span).</li>
-                <li>Найцікавіше опиниться на каналі[span_6](start_span)[span_6](end_span)!</li>
+            <p>Надсилайте свої фото, відео, новини та оголошення з нашого району[span_0](start_span)[span_0](end_span)!</p>
+            
+            <ul class="rules-list">
+                <li>Матеріал має бути вашим[span_1](start_span)[span_1](end_span).</li>
+                <li>Бажано вказати, де та коли це сталося[span_2](start_span)[span_2](end_span).</li>
+                <li>Найцікавіше опиниться на каналі[span_3](start_span)[span_3](end_span)!</li>
             </ul>
         </div>
 
-        <!-- Кнопки-рубрики -->
-        <div class="links-group">
-            
-            <!-- Робота та техніка -->
-            <a href="https://t.me/info360_chat" class="link-card" target="_blank">
-                <div class="link-content">
-                    <span class="icon">🚜</span>
-                    <div class="text-group">
-                        <span class="title">Робота та техніка</span>
-                        <span class="desc">Вакансії та спецтехніка</span>
-                    </div>
-                </div>
-                <span class="arrow">→</span>
-            </a>
-
-            <!-- Місцеві новини -->
-            <a href="https://t.me/info360_krem" class="link-card main-btn" target="_blank">
-                <div class="link-content">
-                    <span class="icon">📍</span>
-                    <div class="text-group">
-                        <span class="title">Місцеві новини району</span>
-                        <span class="desc">Сільські новини та події</span>
-                    </div>
-                </div>
-                <span class="arrow">→</span>
-            </a>
-
-            <!-- Оголошення -->
-            <a href="https://t.me/info360_chat" class="link-card" target="_blank">
-                <div class="link-content">
-                    <span class="icon">🛒</span>
-                    <div class="text-group">
-                        <span class="title">Оголошення та барахолка</span>
-                        <span class="desc">Купити, продати, запропонувати</span>
-                    </div>
-                </div>
-                <span class="arrow">→</span>
-            </a>
-
-            <!-- Курйози -->
-            <a href="https://t.me/info360_chat" class="link-card" target="_blank">
-                <div class="link-content">
-                    <span class="icon">😂</span>
-                    <div class="text-group">
-                        <span class="title">Курйози та цікаві випадки</span>
-                        <span class="desc">Життєві моменти району</span>
-                    </div>
-                </div>
-                <span class="arrow">→</span>
-            </a>
-
-        </div>
+        <!-- Одна главная ссылка на чат -->
+        <a href="https://t.me/info360_chat" class="link-card" target="_blank">
+            <div class="link-content">
+                <span class="icon">💬</span>
+                <span class="title">Перейти в чат / Надіслати новину</span>
+            </div>
+            <span class="arrow">→</span>
+        </a>
     </div>
 
     <footer>
