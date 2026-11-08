@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Info 360 | Кременчуцький район</title>
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-grad: linear-gradient(135deg, #8b5cf6, #ff6b00);
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -24,65 +21,66 @@
         }
         header {
             width: 100%;
-            max-width: 600px;
-            padding: 24px 16px;
-            box-sizing: border-box;
+            padding: 20px 15px;
             text-align: center;
+            background: #1e293b;
             border-bottom: 1px solid #334155;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-        .logo-title {
-            font-size: 28px;
-            font-weight: 800;
-            background: var(--accent-grad);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0 0 6px 0;
+        h1 {
+            font-size: 1.8rem;
+            color: #38bdf8;
+            margin-bottom: 5px;
         }
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin: 0;
+        p.subtitle {
+            font-size: 0.95rem;
+            color: #94a3b8;
         }
         main {
             width: 100%;
-            max-width: 600px;
-            padding: 16px;
-            box-sizing: border-box;
+            max-width: 700px;
+            padding: 15px;
+            flex: 1;
         }
-        .widget-container {
-            background: var(--card-bg);
+        .feed-container {
+            width: 100%;
+            height: 75vh;
             border-radius: 12px;
-            padding: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            background: #1e293b;
             border: 1px solid #334155;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         footer {
-            margin-top: auto;
-            padding: 20px;
-            color: var(--text-muted);
-            font-size: 12px;
+            width: 100%;
             text-align: center;
+            padding: 15px;
+            font-size: 0.85rem;
+            color: #64748b;
+            border-top: 1px solid #1e293b;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1 class="logo-title">INFO 360°</h1>
+        <h1>INFO 360°</h1>
         <p class="subtitle">Головний інформаційний портал | Кременчуцький район</p>
     </header>
 
     <main>
-        <div class="widget-container">
-            <!-- Telegram Feed Widget -->
-            <script async src="https://telegram.org/js/telegram-widget.js?22" 
-                    data-telegram-post="info360_krem/1" 
-                    data-width="100%"></script>
+        <div class="feed-container">
+            <iframe src="https://tgwidget.com/widget/?id=info360_krem"></iframe>
         </div>
     </main>
 
     <footer>
-        &copy; 2026 Info 360 | Кременчуцький район
+        <p>&copy; 2026 Info 360 | Кременчуцький район</p>
     </footer>
 
 </body>
