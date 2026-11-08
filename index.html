@@ -21,7 +21,7 @@
         }
         header {
             width: 100%;
-            padding: 20px 15px;
+            padding: 25px 15px;
             text-align: center;
             background: #1e293b;
             border-bottom: 1px solid #334155;
@@ -38,23 +38,43 @@
         }
         main {
             width: 100%;
-            max-width: 700px;
-            padding: 15px;
+            max-width: 600px;
+            padding: 20px 15px;
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
         }
-        .feed-container {
+        .card {
             width: 100%;
-            height: 75vh;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #ffffff;
+            background: #1e293b;
             border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
         }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #229ed9;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.2s;
+            box-shadow: 0 4px 10px rgba(34, 158, 217, 0.3);
+        }
+        .btn:active {
+            background-color: #1b82b4;
         }
         footer {
             width: 100%;
@@ -74,8 +94,10 @@
     </header>
 
     <main>
-        <div class="feed-container">
-            <iframe src="https://t.me/s/info360_krem"></iframe>
+        <div class="card">
+            <h2>Свіжі новини та події району</h2>
+            <p style="color: #94a3b8; margin-bottom: 20px; font-size: 0.9rem;">Всі оперативні публікації, фото та відео доступні в нашому Telegram-каналі.</p>
+            <a href="https://t.me/info360_krem" class="btn" target="_blank">Перейти до каналу Info 360</a>
         </div>
     </main>
 
