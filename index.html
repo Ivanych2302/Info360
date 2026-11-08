@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info 360 | Кременчуцький район</title>
+    <title>Info 360 | Дошка оголошень Кременчуцького району</title>
     <style>
         * {
             box-sizing: border-box;
@@ -28,89 +28,108 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: #38bdf8;
             margin-bottom: 5px;
         }
         p.subtitle {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #94a3b8;
         }
         main {
             width: 100%;
-            max-width: 650px;
+            max-width: 800px;
             padding: 20px 15px;
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
-        .hero-card {
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 15px;
+            width: 100%;
+        }
+        .product-card {
             background: #1e293b;
             border: 1px solid #334155;
             border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
         }
-        .hero-card h2 {
-            font-size: 1.25rem;
-            color: #e2e8f0;
-            margin-bottom: 10px;
+        .product-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background-color: #334155;
         }
-        .hero-card p {
+        .product-body {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .product-title {
+            font-size: 1.05rem;
+            color: #f8fafc;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .product-price {
+            font-size: 1.1rem;
+            color: #38bdf8;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .product-desc {
+            font-size: 0.85rem;
             color: #94a3b8;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
             line-height: 1.4;
+            margin-bottom: 15px;
+            flex: 1;
         }
-        .btn {
-            display: inline-block;
+        .btn-buy {
+            display: block;
+            width: 100%;
+            text-align: center;
             background-color: #229ed9;
             color: white;
             text-decoration: none;
-            padding: 12px 28px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 4px 10px rgba(34, 158, 217, 0.3);
-            transition: background 0.2s;
-        }
-        .btn:active {
-            background-color: #1b82b4;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .feature-item {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 10px;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .feature-text {
-            font-size: 0.9rem;
-            color: #cbd5e1;
-        }
-        .feature-link {
-            color: #38bdf8;
-            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
             font-weight: 600;
             font-size: 0.85rem;
-            white-space: nowrap;
-            margin-left: 10px;
+            transition: background 0.2s;
+        }
+        .btn-buy:active {
+            background-color: #1b82b4;
+        }
+        .banner-tg {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid #38bdf8;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .banner-tg h2 {
+            font-size: 1.1rem;
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
+        .banner-tg p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 12px;
         }
         footer {
             width: 100%;
             text-align: center;
             padding: 15px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #64748b;
             border-top: 1px solid #1e293b;
         }
@@ -120,29 +139,53 @@
 
     <header>
         <h1>INFO 360°</h1>
-        <p class="subtitle">Головний інформаційний портал | Кременчуцький район</p>
+        <p class="subtitle">Вітрина оголошень та товарів | Кременчуцький район</p>
     </header>
 
     <main>
-        <div class="hero-card">
-            <h2>Оперативні новини Кременчуцького району</h2>
-            <p>Вся актуальна інформація, події, фото та відео публікуються в реальному часі в нашому офіційному Telegram-каналі.</p>
-            <a href="https://t.me/info360_krem" class="btn" target="_blank">Перейти до Telegram-каналу</a>
+        <!-- Баннер сверху -->
+        <div class="banner-tg">
+            <h2>Бажаєте подати своє оголошення?</h2>
+            <p>Публікуйте товари та послуги безкоштовно у нашому Telegram-чаті</p>
+            <a href="https://t.me/chat_tut_svoi" class="btn-buy" target="_blank">Подати оголошення в Чат →</a>
         </div>
 
-        <div class="features">
-            <div class="feature-item">
-                <span class="feature-text">⚡ Свіжі новини та події регіону</span>
-                <a href="https://t.me/info360_krem" class="feature-link" target="_blank">Читати →</a>
+        <!-- Витрина товаров -->
+        <div class="catalog-grid">
+
+            <!-- ТОВАР 1 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/400x300/334155/f8fafc?text=%D0%A2%D0%BE%D0%B2%D0%B0%D1%80+1" alt="Товар 1" class="product-img">
+                <div class="product-body">
+                    <div class="product-title">Зерно / Корми для господарства</div>
+                    <div class="product-price">250 грн / мішок</div>
+                    <div class="product-desc">Якісний корм у наявності. Доставка по району або самовивіз.</div>
+                    <a href="https://t.me/chat_tut_svoi" class="btn-buy" target="_blank">Купити / Зв'язатися →</a>
+                </div>
             </div>
-            <div class="feature-item">
-                <span class="feature-text">📷 Фото та відео з місць подій</span>
-                <a href="https://t.me/info360_krem" class="feature-link" target="_blank">Дивитися →</a>
+
+            <!-- ТОВАР 2 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/400x300/334155/f8fafc?text=%D0%A2%D0%BE%D0%B2%D0%B0%D1%80+2" alt="Товар 2" class="product-img">
+                <div class="product-body">
+                    <div class="product-title">Запчастини та комплектуючі</div>
+                    <div class="product-price">1 200 грн</div>
+                    <div class="product-desc">Деталі в чудовому стані. Можливий торг або обмін.</div>
+                    <a href="https://t.me/chat_tut_svoi" class="btn-buy" target="_blank">Купити / Зв'язатися →</a>
+                </div>
             </div>
-            <div class="feature-item">
-                <span class="feature-text">💬 Обговорення та коментарі</span>
-                <a href="https://t.me/info360_krem" class="feature-link" target="_blank">Долучитись →</a>
+
+            <!-- ТОВАР 3 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/400x300/334155/f8fafc?text=%D0%A2%D0%BE%D0%B2%D0%B0%D1%80+3" alt="Товар 3" class="product-img">
+                <div class="product-body">
+                    <div class="product-title">Послуги вантажоперевезень</div>
+                    <div class="product-price">Договірна</div>
+                    <div class="product-desc">Перевезення вантажів по району та області. Надійність та оперативність.</div>
+                    <a href="https://t.me/chat_tut_svoi" class="btn-buy" target="_blank">Написати у Telegram →</a>
+                </div>
             </div>
+
         </div>
     </main>
 
