@@ -21,7 +21,7 @@
         }
         header {
             width: 100%;
-            padding: 25px 15px;
+            padding: 20px 15px;
             text-align: center;
             background: #1e293b;
             border-bottom: 1px solid #334155;
@@ -38,43 +38,39 @@
         }
         main {
             width: 100%;
-            max-width: 600px;
-            padding: 20px 15px;
+            max-width: 650px;
+            padding: 15px;
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            justify-content: center;
+            gap: 20px;
         }
-        .card {
+        .feed-box {
             width: 100%;
             background: #1e293b;
             border: 1px solid #334155;
             border-radius: 12px;
-            padding: 25px;
-            text-align: center;
+            overflow: hidden;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            text-align: center;
         }
-        .card h2 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: #e2e8f0;
+        .tg-widget-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
         .btn {
             display: inline-block;
             background-color: #229ed9;
             color: white;
             text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 25px;
+            padding: 10px 24px;
+            border-radius: 20px;
             font-weight: 600;
-            font-size: 1rem;
-            transition: background 0.2s;
+            font-size: 0.95rem;
+            margin-top: 15px;
             box-shadow: 0 4px 10px rgba(34, 158, 217, 0.3);
-        }
-        .btn:active {
-            background-color: #1b82b4;
         }
         footer {
             width: 100%;
@@ -94,10 +90,15 @@
     </header>
 
     <main>
-        <div class="card">
-            <h2>Свіжі новини та події району</h2>
-            <p style="color: #94a3b8; margin-bottom: 20px; font-size: 0.9rem;">Всі оперативні публікації, фото та відео доступні в нашому Telegram-каналі.</p>
-            <a href="https://t.me/info360_krem" class="btn" target="_blank">Перейти до каналу Info 360</a>
+        <div class="feed-box">
+            <p style="color: #94a3b8; margin-bottom: 15px; font-size: 0.9rem;">Останні публікації з нашого каналу:</p>
+            
+            <!-- Офіційний віджет Telegram -->
+            <div class="tg-widget-container">
+                <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="info360_krem/1" data-width="100%" data-dark="1"></script>
+            </div>
+
+            <a href="https://t.me/info360_krem" class="btn" target="_blank">Відкрити канал у Telegram</a>
         </div>
     </main>
 
