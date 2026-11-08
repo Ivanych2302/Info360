@@ -30,48 +30,47 @@
             margin: auto 0;
         }
         .logo-box {
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, #38bdf8, #0284c7);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #ffffff;
             box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
             color: #ffffff;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             text-align: center;
         }
         .subtitle {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #94a3b8;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             line-height: 1.4;
         }
         .links-group {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
         }
         .link-card {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 20px;
+            padding: 14px 18px;
             background: #1e293b;
             border: 1px solid #334155;
-            border-radius: 16px;
+            border-radius: 14px;
             text-decoration: none;
             color: #f8fafc;
             transition: all 0.2s ease;
@@ -84,27 +83,27 @@
         .link-content {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 14px;
         }
         .icon {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
         .text-group {
             display: flex;
             flex-direction: column;
         }
         .title {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #f1f5f9;
         }
         .desc {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #94a3b8;
         }
         .arrow {
             color: #38bdf8;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
         }
         .main-btn {
@@ -121,7 +120,7 @@
             color: #ffffff;
         }
         footer {
-            margin-top: 30px;
+            margin-top: 25px;
             font-size: 0.8rem;
             color: #64748b;
             text-align: center;
@@ -135,43 +134,55 @@
         <div class="logo-box">360°</div>
 
         <!-- Заголовок -->
-        <h1>INFO 360°</h1>
-        <p class="subtitle">Головний інформаційний портал та спільнота Кременчуцького району</p>
+        INFO 360°
+        <p class="subtitle">Є що показати чи оголосити? Надсилайте новини та матеріали!</p>
 
-        <!-- Ссылки -->
+        <!-- Ссылки на рубрики -->
         <div class="links-group">
             
-            <!-- Главный канал -->
+            <!-- Робота та техніка -->
+            <a href="https://t.me/info360_chat" class="link-card" target="_blank">
+                <div class="link-content">
+                    <span class="icon">🚜</span>
+                    <div class="text-group">
+                        <span class="title">Робота та техніка</span>
+                        <span class="desc">Вакансії, спецтехніка та робочі питання</span>
+                    </div>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- Місцеві та сільські новини -->
             <a href="https://t.me/info360_krem" class="link-card main-btn" target="_blank">
                 <div class="link-content">
-                    <span class="icon">📢</span>
+                    <span class="icon">📍</span>
                     <div class="text-group">
-                        <span class="title">Telegram-канал</span>
-                        <span class="desc">Оперативні новини та події району</span>
+                        <span class="title">Сільські та місцеві новини</span>
+                        <span class="desc">Кременчуцький район у реальному часі</span>
                     </div>
                 </div>
                 <span class="arrow">→</span>
             </a>
 
-            <!-- Чат / Объявления -->
+            <!-- Оголошення -->
             <a href="https://t.me/info360_chat" class="link-card" target="_blank">
                 <div class="link-content">
-                    <span class="icon">💬</span>
+                    <span class="icon">🛒</span>
                     <div class="text-group">
-                        <span class="title">Міський Чат & Барахолка</span>
-                        <span class="desc">Оголошення, покупки та спілкування</span>
+                        <span class="title">Оголошення та барахолка</span>
+                        <span class="desc">Купити, продати, запропонувати</span>
                     </div>
                 </div>
                 <span class="arrow">→</span>
             </a>
 
-            <!-- Размещение объявлений -->
+            <!-- Курйози та цікаві випадки -->
             <a href="https://t.me/info360_chat" class="link-card" target="_blank">
                 <div class="link-content">
-                    <span class="icon">📝</span>
+                    <span class="icon">😂</span>
                     <div class="text-group">
-                        <span class="title">Подати оголошення</span>
-                        <span class="desc">Опублікувати товар чи послугу</span>
+                        <span class="title">Курйози та цікаві випадки</span>
+                        <span class="desc">Життєві моменти та гумор району</span>
                     </div>
                 </div>
                 <span class="arrow">→</span>
