@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info 360 | Дошка оголошень Кременчуцького району</title>
+    <title>INFO 360° | Кременчуцький район</title>
     <style>
         * {
             box-sizing: border-box;
@@ -11,175 +11,178 @@
             padding: 0;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0f172a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #0f172a;
             color: #f8fafc;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
-        }
-        header {
-            width: 100%;
+            justify-content: space-between;
             padding: 20px 15px;
-            text-align: center;
-            background: #1e293b;
-            border-bottom: 1px solid #334155;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto 0;
+        }
+        .logo-box {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+            margin-bottom: 20px;
         }
         h1 {
-            font-size: 1.6rem;
-            color: #38bdf8;
-            margin-bottom: 5px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            text-align: center;
         }
-        p.subtitle {
-            font-size: 0.85rem;
+        .subtitle {
+            font-size: 0.95rem;
             color: #94a3b8;
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.4;
         }
-        main {
+        .links-group {
             width: 100%;
-            max-width: 800px;
-            padding: 20px 15px;
-            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 14px;
         }
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 15px;
-            width: 100%;
-        }
-        .product-card {
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
             background: #1e293b;
             border: 1px solid #334155;
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-        }
-        .product-img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            background-color: #334155;
-        }
-        .product-body {
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-        .product-title {
-            font-size: 1.05rem;
-            color: #f8fafc;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        .product-price {
-            font-size: 1.1rem;
-            color: #38bdf8;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .product-desc {
-            font-size: 0.85rem;
-            color: #94a3b8;
-            line-height: 1.4;
-            margin-bottom: 15px;
-            flex: 1;
-        }
-        .btn-buy {
-            display: block;
-            width: 100%;
-            text-align: center;
-            background-color: #229ed9;
-            color: white;
+            border-radius: 16px;
             text-decoration: none;
-            padding: 10px;
-            border-radius: 8px;
+            color: #f8fafc;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .link-card:active {
+            transform: scale(0.98);
+            background: #334155;
+        }
+        .link-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 1.5rem;
+        }
+        .text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            font-size: 1rem;
             font-weight: 600;
-            font-size: 0.85rem;
-            transition: background 0.2s;
+            color: #f1f5f9;
         }
-        .btn-buy:active {
-            background-color: #1b82b4;
-        }
-        .banner-tg {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            border: 1px solid #38bdf8;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .banner-tg h2 {
-            font-size: 1.1rem;
-            color: #38bdf8;
-            margin-bottom: 5px;
-        }
-        .banner-tg p {
-            font-size: 0.85rem;
+        .desc {
+            font-size: 0.8rem;
             color: #94a3b8;
-            margin-bottom: 12px;
+        }
+        .arrow {
+            color: #38bdf8;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .main-btn {
+            background: linear-gradient(135deg, #0284c7, #2563eb);
+            border: none;
+        }
+        .main-btn .title {
+            color: #ffffff;
+        }
+        .main-btn .desc {
+            color: #e0f2fe;
+        }
+        .main-btn .arrow {
+            color: #ffffff;
         }
         footer {
-            width: 100%;
-            text-align: center;
-            padding: 15px;
+            margin-top: 30px;
             font-size: 0.8rem;
             color: #64748b;
-            border-top: 1px solid #1e293b;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <div class="container">
+        <!-- Логотип -->
+        <div class="logo-box">360°</div>
+
+        <!-- Заголовок -->
         <h1>INFO 360°</h1>
-        <p class="subtitle">Вітрина оголошень та товарів | Кременчуцький район</p>
-    </header>
+        <p class="subtitle">Головний інформаційний портал та спільнота Кременчуцького району</p>
 
-    <main>
-        <!-- Баннер сверху -->
-        <div class="banner-tg">
-            <h2>Бажаєте подати своє оголошення?</h2>
-            <p>Публікуйте товари та послуги безкоштовно у нашому Telegram-чаті</p>
-            <a href="https://t.me/info360_chat" class="btn-buy" target="_blank">Подати оголошення в Чат →</a>
+        <!-- Ссылки -->
+        <div class="links-group">
+            
+            <!-- Главный канал -->
+            <a href="https://t.me/info360_krem" class="link-card main-btn" target="_blank">
+                <div class="link-content">
+                    <span class="icon">📢</span>
+                    <div class="text-group">
+                        <span class="title">Telegram-канал</span>
+                        <span class="desc">Оперативні новини та події району</span>
+                    </div>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- Чат / Объявления -->
+            <a href="https://t.me/info360_chat" class="link-card" target="_blank">
+                <div class="link-content">
+                    <span class="icon">💬</span>
+                    <div class="text-group">
+                        <span class="title">Міський Чат & Барахолка</span>
+                        <span class="desc">Оголошення, покупки та спілкування</span>
+                    </div>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+
+            <!-- Размещение объявлений -->
+            <a href="https://t.me/info360_chat" class="link-card" target="_blank">
+                <div class="link-content">
+                    <span class="icon">📝</span>
+                    <div class="text-group">
+                        <span class="title">Подати оголошення</span>
+                        <span class="desc">Опублікувати товар чи послугу</span>
+                    </div>
+                </div>
+                <span class="arrow">→</span>
+            </a>
+
         </div>
+    </div>
 
-        <!-- Витрина товаров -->
-        <div class="catalog-grid">
+    <footer>
+        &copy; 2026 INFO 360° | info360.pp.ua
+    </footer>
 
-            <!-- ТОВАР 1 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x300/334155/f8fafc?text=%D0%A2%D0%BE%D0%B2%D0%B0%D1%80+1" alt="Товар 1" class="product-img">
-                <div class="product-body">
-                    <div class="product-title">Зерно / Корми для господарства</div>
-                    <div class="product-price">250 грн / мішок</div>
-                    <div class="product-desc">Якісний корм у наявності. Доставка по району або самовивіз.</div>
-                    <a href="https://t.me/info360_chat" class="btn-buy" target="_blank">Купити / Зв'язатися →</a>
-                </div>
-            </div>
-
-            <!-- ТОВАР 2 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x300/334155/f8fafc?text=%D0%A2%D0%BE%D0%B2%D0%B0%D1%80+2" alt="Товар 2" class="product-img">
-                <div class="product-body">
-                    <div class="product-title">Запчастини та комплектуючі</div>
-                    <div class="product-price">1 200 грн</div>
-                    <div class="product-desc">Деталі в чудовому стані. Можливий торг або обмін.</div>
-                    <a href="https://t.me/info360_chat" class="btn-buy" target="_blank">Купити / Зв'язатися →</a>
-                </div>
-            </div>
-
-            <!-- ТОВАР 3 -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x300/334155/f8fafc?text=%D0%A2%D0%BE%D0%B2%D0%B0%D1%80+3" alt="Товар 3" class="product-img">
-                <div class="product-body">
-                    <div class="product-title">Послуги вантажоперевезень</div>
-                    <div class="product-price">Договірна</div>
-                    <div class="product-desc">Перевезення вантажів по району та області. Надійність та оперативність.</div>
-                    <a href="https://t.me/info360_chat" class="btn-buy" target="_blank">Замовити у Telegram →</a>
+</body>
+</html>
