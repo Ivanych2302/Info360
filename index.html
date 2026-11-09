@@ -18,7 +18,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 15px;
+            padding: 15px;
         }
         .container {
             width: 100%;
@@ -28,21 +28,21 @@
             align-items: center;
         }
         .logo-box {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, #38bdf8, #0284c7);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: #ffffff;
-            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
-            margin-bottom: 12px;
+            box-shadow: 0 6px 15px rgba(56, 189, 248, 0.3);
+            margin-bottom: 10px;
         }
         h1 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: #ffffff;
             margin-bottom: 15px;
@@ -51,66 +51,57 @@
         .intro-box {
             background: #1e293b;
             border: 1px solid #334155;
-            border-radius: 16px;
-            padding: 18px;
-            margin-bottom: 20px;
+            border-radius: 14px;
+            padding: 15px;
+            margin-bottom: 15px;
             width: 100%;
             text-align: center;
         }
         .intro-box h2 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #38bdf8;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .intro-box p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #94a3b8;
             line-height: 1.4;
         }
-        .feed-title {
-            font-size: 1.1rem;
-            color: #f1f5f9;
-            margin: 10px 0 15px 0;
-            align-self: flex-start;
-            font-weight: 700;
-        }
-        .telegram-widget-wrapper {
+        /* Контейнер для вывода ленты Telegram прямо на странице */
+        .feed-container {
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 25px;
+            height: 500px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 15px;
         }
-        /* Стилизация контейнеров виджета */
-        .tg-post {
+        .feed-container iframe {
             width: 100%;
-            display: flex;
-            justify-content: center;
+            height: 100%;
+            border: none;
+            background: #0f172a;
         }
         .link-card {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 20px;
+            padding: 14px 18px;
             background: linear-gradient(135deg, #0284c7, #2563eb);
-            border-radius: 14px;
+            border-radius: 12px;
             text-decoration: none;
             color: #ffffff;
             width: 100%;
             font-weight: 600;
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-            margin-top: 10px;
-        }
-        .link-content {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            margin-bottom: 15px;
         }
         footer {
-            margin-top: 30px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #64748b;
             text-align: center;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -121,31 +112,22 @@
         <div class="logo-box">360°</div>
         <h1>INFO 360°</h1>
 
-        <!-- Описание -->
+        <!-- Краткое описание -->
         <div class="intro-box">
-            <h2>Є що показати чи оголосити? 📢</h2>
-            <p>Надсилайте свої фото, відео, новини та оголошення з нашого району!</p>
+            <h2>Стрічка новин району 📢</h2>
+            <p>Усі свіжі публікації нижче або в нашому Telegram-каналі.</p>
         </div>
 
-        <!-- Кнопка перехода -->
+        <!-- ОКО ИЗ ВЕБ-ВЕРСИИ TELEGRAM ПРЯМО НА САЙТЕ -->
+        <div class="feed-container">
+            <iframe src="https://t.me/s/info360_krem" title="Telegram Feed"></iframe>
+        </div>
+
+        <!-- Кнопка на всякий случай -->
         <a href="https://t.me/info360_krem" class="link-card" target="_blank">
-            <div class="link-content">
-                <span style="font-size: 1.3rem;">📢</span>
-                <span>Читати всі новини в Telegram</span>
-            </div>
+            <span>📢 Відкрити канал у додатку</span>
             <span>→</span>
         </a>
-
-        <!-- Блок со свежими постами -->
-        <div class="feed-title">Останні публікації:</div>
-
-        <div class="telegram-widget-wrapper">
-            <!-- Виджет поста 1 (самый свежий пост в канале, например №1) -->
-            <div class="tg-post">
-                <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="info360_krem/1" data-width="100%" data-dark="1"></script>
-            </div>
-        </div>
-
     </div>
 
     <footer>
