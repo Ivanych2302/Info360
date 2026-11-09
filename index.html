@@ -18,30 +18,28 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
             padding: 20px 15px;
         }
         .container {
             width: 100%;
-            max-width: 480px;
+            max-width: 500px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: auto 0;
         }
         .logo-box {
-            width: 75px;
-            height: 75px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, #38bdf8, #0284c7);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: #ffffff;
             box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         h1 {
             font-size: 1.6rem;
@@ -54,47 +52,40 @@
             background: #1e293b;
             border: 1px solid #334155;
             border-radius: 16px;
-            padding: 20px;
+            padding: 18px;
             margin-bottom: 20px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         .intro-box h2 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #38bdf8;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .intro-box p {
-            font-size: 0.9rem;
-            color: #94a3b8;
-            line-height: 1.5;
-            margin-bottom: 12px;
-        }
-        .rules-list {
-            text-align: left;
             font-size: 0.85rem;
-            color: #cbd5e1;
-            background: #0f172a;
-            border-radius: 10px;
-            padding: 12px 15px;
-            margin-top: 10px;
-            list-style: none;
+            color: #94a3b8;
+            line-height: 1.4;
         }
-        .rules-list li {
-            margin-bottom: 6px;
-            position: relative;
-            padding-left: 18px;
+        .feed-title {
+            font-size: 1.1rem;
+            color: #f1f5f9;
+            margin: 10px 0 15px 0;
+            align-self: flex-start;
+            font-weight: 700;
         }
-        .rules-list li::before {
-            content: "•";
-            color: #38bdf8;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
+        .telegram-widget-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
         }
-        .rules-list li:last-child {
-            margin-bottom: 0;
+        /* Стилизация контейнеров виджета */
+        .tg-post {
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
         .link-card {
             display: flex;
@@ -108,27 +99,15 @@
             width: 100%;
             font-weight: 600;
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-            transition: transform 0.2s ease;
-        }
-        .link-card:active {
-            transform: scale(0.98);
+            margin-top: 10px;
         }
         .link-content {
             display: flex;
             align-items: center;
             gap: 12px;
         }
-        .icon {
-            font-size: 1.4rem;
-        }
-        .title {
-            font-size: 1rem;
-        }
-        .arrow {
-            font-size: 1.2rem;
-        }
         footer {
-            margin-top: 20px;
+            margin-top: 30px;
             font-size: 0.8rem;
             color: #64748b;
             text-align: center;
@@ -138,31 +117,35 @@
 <body>
 
     <div class="container">
-        <!-- Логотип -->
+        <!-- Шапка -->
         <div class="logo-box">360°</div>
-
         <h1>INFO 360°</h1>
 
-        <!-- Блок описания -->
+        <!-- Описание -->
         <div class="intro-box">
             <h2>Є що показати чи оголосити? 📢</h2>
             <p>Надсилайте свої фото, відео, новини та оголошення з нашого району!</p>
-            
-            <ul class="rules-list">
-                <li>Матеріал має бути вашим.</li>
-                <li>Бажано вказати, де та коли це сталося.</li>
-                <li>Найцікавіше опиниться на каналі!</li>
-            </ul>
         </div>
 
-        <!-- Ссылка на канал -->
+        <!-- Кнопка перехода -->
         <a href="https://t.me/info360_krem" class="link-card" target="_blank">
             <div class="link-content">
-                <span class="icon">📢</span>
-                <span class="title">Перейти в Telegram-канал</span>
+                <span style="font-size: 1.3rem;">📢</span>
+                <span>Читати всі новини в Telegram</span>
             </div>
-            <span class="arrow">→</span>
+            <span>→</span>
         </a>
+
+        <!-- Блок со свежими постами -->
+        <div class="feed-title">Останні публікації:</div>
+
+        <div class="telegram-widget-wrapper">
+            <!-- Виджет поста 1 (самый свежий пост в канале, например №1) -->
+            <div class="tg-post">
+                <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-post="info360_krem/1" data-width="100%" data-dark="1"></script>
+            </div>
+        </div>
+
     </div>
 
     <footer>
